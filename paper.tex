@@ -4,7 +4,7 @@
 %-------------------------------
 % Uncomment and adjust to change the default values set by the template
 % Note: the defaults are suggested values by Ghent University
-%\geometry{bottom=2.5cm,top=2.5cm,left=3cm,right=2cm} 
+%\geometry{bottom=2.5cm,top=2.5cm,left=3cm,right=2cm}
 %\renewcommand{\baselinestretch}{1.15} % line spacing
 
 
@@ -18,7 +18,7 @@
 
 % Proper word splitting
 %-----------------------
-\usepackage[english]{babel} 
+\usepackage[english]{babel}
 
 % Mathematics
 %-------------
@@ -28,6 +28,12 @@
 %---------
 \usepackage{graphicx}
 \graphicspath{{./figures/}}
+
+% Tables
+%--------
+\usepackage{booktabs} % \toprule, \midrule, \bottomrule
+\usepackage{tabularx} % tables that fill the text width
+\usepackage{array}    % >{...} column formatting
 
 % Bibliography settings
 %-----------------------
@@ -42,7 +48,7 @@
 
 % Whitespace between paragraphs and no indentation
 %--------------------------------------------------
-\usepackage[parfill]{parskip} 
+\usepackage[parfill]{parskip}
 
 % Input for title page
 %----------------------
@@ -62,7 +68,7 @@
 \infoboxa{\bfseries\large Course: Design Thinking}
 
 % % The second infobox at bottom of titlepage
-% \infoboxb{Teacher: 
+% \infoboxb{Teacher:
 % \begin{tabular}[t]{l}
 %     Prof.\ Dr.\ Dries Benoit\\ % note syntax 'short space'
 %     Arthur Thuy (TA)
@@ -70,7 +76,7 @@
 % }
 
 % The third infobox at bottom of titlepage
-\infoboxc{Students: 
+\infoboxc{Students:
 \begin{tabular}[t]{lll}
     Team 01 &&\\
     Fulan Al-Fulani & 0123456789 & fulan.alfulani@ugent.be\\
@@ -107,6 +113,7 @@
 
 \input{example.tex}
 \input{sota.tex}
+\input{pvb.tex}
 
 % =====================================================================
 % End matter

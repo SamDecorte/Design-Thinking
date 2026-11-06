@@ -1,0 +1,125 @@
+\section{Product Vision Board}
+\label{sec:vision-board}
+
+The product vision board summarises what DETOUR is, who it is for, which problem it solves and why it is better than what already exists. It is the bridge between the Design Thinking phase and the next phase: every block on the board comes from one of the earlier phases, and it sets the scope for what we will build.
+
+\subsection{Product statement}
+\label{subsec:product-statement}
+
+\begin{quote}
+\textit{DETOUR is a smartphone app for smokers who want to quit, built on existing models, like the HAPA behaviour change model. HAPA determines which phase of the quit process the user is in. Within that phase, COM-B and TDF identify the determinants that need to change, such as stress, triggering places or low motivation. Wearable data (heart rate/HRV), location, agenda and check-ins help measure these determinants. DETOUR then deploys the app features whose behaviour change techniques (BCTs) target exactly those determinants, and learns per user which ones work best.}
+\end{quote}
+
+The statement is the short version of our How Might We question from the Define phase: \textit{``How might we choose the correct (direct vs.\ indirect) kind of intervention (BCT) for the right person at the correct moment to stop smoking?''} It answers the three parts of that question:
+
+\begin{itemize}
+    \item \textbf{Right person:} personal onboarding, plus learning per user over time.
+    \item \textbf{Right moment:} knowing the phase (HAPA), plus live context from wearable, location, agenda and check-ins.
+    \item \textbf{Right intervention:} BCTs chosen because they target the determinant behind \textit{this} craving.
+\end{itemize}
+
+The behaviour models are not decoration. They are the logic the app runs on. The app works as a loop:
+
+\begin{enumerate}
+    \item User info (onboarding, check-ins, sensors) is translated into \textbf{determinants} via TDF and COM-B, within the current \textbf{HAPA} phase.
+    \item The determinants select the \textbf{BCTs} that target them.
+    \item Each BCT can be delivered through several concrete \textbf{app features}. The app picks the feature that best fits this user.
+    \item A \textbf{performance evaluation} checks whether the feature helped: did the user interact, did the craving pass, did they smoke? The result feeds back into the selection, which is how the app gets more \textbf{personal} over time.
+\end{enumerate}
+
+Table~\ref{tab:bct-mapping} shows this for one determinant. When the app detects that social influences matter for a user (for example, the user says in onboarding that friends or a partner support their attempt), it selects BCT 3.1 \textit{Social support (unspecified)} from the BCT Taxonomy v1 (Michie et al., 2013). This BCT can be delivered through two different features. Which one the user gets depends on their profile, and the performance evaluation corrects the choice if it does not work.
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.15\textwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{0.24\textwidth} >{\raggedright\arraybackslash}p{0.24\textwidth}}
+        \toprule
+        \textbf{Feature} & \textbf{How it delivers social support} & \textbf{Suits users who\ldots} & \textbf{Less suited for users who\ldots} \\
+        \midrule
+        Buddy system & The user links one trusted person (partner, friend, ex-smoker). When the user presses the SOS button during a craving, the buddy gets a notification and can call or send a message. & have one close person they want to involve; need help at the moment of a craving. & don't want others to know they are quitting; have no one to ask. \\
+        Leaderboard & The user joins a small group (friends or other DETOUR users) and sees each member's number of smoke-free days. The group can send each other encouragement. & are motivated by a group and by seeing progress; like a bit of competition. & feel ashamed when they fall behind; would be discouraged after a lapse. \\
+        \bottomrule
+    \end{tabularx}
+    \caption{One BCT, two features. Determinant: social influences (TDF), which falls under social opportunity in COM-B. BCT: 3.1 Social support (unspecified). Each row is a separate feature that delivers the same BCT. The two right columns show which user profile the app uses to choose between them. If the chosen feature is ignored or does not reduce cravings, the performance evaluation lowers its score for that user and the other feature is tried.}
+    \label{tab:bct-mapping}
+\end{table}
+
+\subsection{Target group}
+\label{subsec:target-group}
+
+Smokers who want to quit. This covers three groups that we met during the Empathize phase:
+
+\begin{itemize}
+    \item people who tried before and failed,
+    \item people who have stopped and want to keep it that way (relapse prevention),
+    \item people who are trying for the first time.
+\end{itemize}
+
+All three share the condition we heard in every interview and in the first meeting with our challenger, Prof.\ Geert Crombez: \textbf{the motivation has to come from the user.} DETOUR does not try to convince people who don't want to quit; it helps people who already do.
+
+\subsection{Needs}
+\label{subsec:needs}
+
+We identified two core needs:
+
+\begin{enumerate}
+    \item \textbf{Personal fit.} Smokers don't know which quit method or app suits them. There are many apps, most of low quality, and testing them one by one costs time and motivation. In practice, a failed attempt with the wrong app feels like a personal failure.
+    \item \textbf{Craving support that matches the cause.} Cravings have different causes (stress, a place, boredom, a social situation, physical withdrawal), and the same technique does not work for every cause. The HAPA phase also matters: someone still building motivation needs different help from someone resisting a craving on day three.
+\end{enumerate}
+
+These needs come directly from the interviews (Empathize) and from the clustering of our HMW questions (Define), where ``the right method for the right person'' and ``help at the moment of the craving'' were the two largest clusters.
+
+\subsection{Product}
+\label{subsec:product}
+
+\begin{itemize}
+    \item \textbf{Personal onboarding.} The user maps their own triggers and preferred kinds of help. Based on user feedback from the Test phase, this happens through a short chatbot conversation instead of a questionnaire.
+    \item \textbf{Smart selection from a BCT library.} The app picks the techniques, not the user. Selection works on two levels:
+    \begin{itemize}
+        \item \textbf{Phase (HAPA):} before the quit day, only motivation modules (health risks, money wasted, confidence). After the quit day, only coping modules (coping plans, trigger management, streaks).
+        \item \textbf{Cause (COM-B):} stress gets urge-surfing audio, a trigger place gets a problem-solving chatbot, low motivation gets the user's personal ``why''.
+    \end{itemize}
+    \item \textbf{Several features per BCT.} The same technique can be delivered in different ways (Table~\ref{tab:bct-mapping}), so the app can match the form to the person.
+    \item \textbf{Learning per user.} Through the performance evaluation, the app learns which features work for this user and which ones they ignore.
+\end{itemize}
+
+\subsection{Value}
+\label{subsec:value}
+
+\begin{itemize}
+    \item \textbf{No need to compare and test apps yourself.} DETOUR picks the right techniques for you.
+    \item \textbf{Help that fits the cause of this craving and the phase you're in}, so less wasted effort and a higher chance of quitting for good.
+\end{itemize}
+
+Users should not fail their quit attempt because the method didn't suit them.
+
+\subsection{Competitors and alternatives}
+\label{subsec:competitors}
+
+Most quit apps (e.g.\ QuitNow, Kwit, Smokefree, Stoppen met Roken) do one of two things: they track progress and savings, or they offer the same fixed step-by-step programme to everyone. A few are science-based (Quit Genius, QuitSure, WHO Quit Tobacco), but they also follow a fixed path.
+
+Apps that adapt to the user's context in real time exist only in research, for example Q~Sense (geofence-triggered support), Smart-T (EMA-based lapse prediction) and Sense2Stop (stress detection from wearable sensors). These prove the idea is feasible, but none is on the market for consumers. DETOUR fills that gap by combining the scientific basis of these research apps with the usability of consumer apps. See the State of the Art chapter for the full comparison.
+
+\subsection{Link with the recommendations}
+\label{subsec:recommendations}
+
+The vision board describes \textit{what} we will build. The recommendations from the Test phase set limits on \textit{how} (Table~\ref{tab:recommendations}).
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.38\textwidth} >{\raggedright\arraybackslash}X}
+        \toprule
+        \textbf{Recommendation} & \textbf{Effect on the product} \\
+        \midrule
+        Keep actions concrete & Every BCT module ends in one clear action, e.g.\ ``do this 3-minute exercise'', not ``try to relax'' \\
+        Long questionnaires don't work; a chatbot works better & Onboarding and check-ins are short chatbot conversations \\
+        Long chats are not pleasant either & Chatbot conversations are capped at a few turns \\
+        Showing the craving level can backfire & Risk is used internally to time interventions, but is not shown to the user as a score \\
+        Some users dislike daily notifications & Notification frequency is part of the personal profile and is learned over time \\
+        Adapt language to the profile & Tone (formal, informal, technical) is set during onboarding \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Recommendations from the Test phase and how they change the product described on the vision board.}
+    \label{tab:recommendations}
+\end{table}
