@@ -25,15 +25,16 @@ We looked at a few of the most popular smoking cessation apps, and we saw that t
     \item \textbf{Progress trackers.} There are many variations of this; some track the number of days without smoking, some track the amount of money saved by not smoking, some track lifetime saved by not smoking.
     \item \textbf{Social aspects.} Some apps use a social aspect, like forums or other chat functions.
     \item \textbf{Planners.} Apps might help users plan designated smoke-free days, or plan a quit date.
-    \item \textbf{\ac{cbt}}. Some apps use \ac{cbt} as a basis for their interventions.
+    \item \textbf{\Ac{cbt}}. Some apps use \ac{cbt} as a basis for their interventions.
     \item \textbf{Gamification.} Many apps use badges, mileposts, or levels to signify progress. Some apps also include games as a distraction for when a craving hits.
 \end{itemize}
 
-To make things more concrete, we will now look at a subset of the most popular apps, which we believe are scientifically based.
+To make things more concrete, we will now look at a subset of the most popular apps, of which we believe they are scientifically based.
 
 \subsubsection{QuitSure}
 
-This app has published a study, showing its effectiveness \cite{BestQuitSmoking, goldgofEfficacyQuitSureApp2024}. The study reports that 80.1\% of the users maintained abstinence for at least 30 days after program completion \cite{goldgofEfficacyQuitSureApp2024}.
+% We moeten heel voorzichtig zijn met deze cijfers... Het is 80.1\% van de mensen **die het programma volledig gevolgd hebben**. De mensen die dus zijn afgehaakt zijn niet meegeteld!
+The authors of this app have published a study showing its effectiveness \cite{BestQuitSmoking, goldgofEfficacyQuitSureApp2024}. The study reports that 80.1\% of the users maintained abstinence for at least 30 days after program completion \cite{goldgofEfficacyQuitSureApp2024}. Note that this is only for users who have completed the entire program, and does not include users who dropped out, nor the people who did not respond to the follow-up questions. Also note that these are self-reported figures, and have not been biochemically verified.
 
 The app is based on techniques from psychology, \ac{cbt}, and mindfulness \cite{goldgofEfficacyQuitSureApp2024}.
 
@@ -43,6 +44,26 @@ In their discussion, the researchers note that there is a high dropout rate of 5
 Additionally, most relapses were a result of high cravings, for which the app did not have specific interventions after program completion.
 
 Unfortunately, the study does not go into detail on what specific modules in the app contributed most to successful smoking cessation.
+
+\subsubsection{Quit Sense}
+
+% """The rate of 6-month biochemically verified sustained abstinence, which we anticipated would be used as a primary outcome in a future study, was 11.5% (12/104) in the Quit Sense arm and 2.9% (3/105) in the usual care arm (estimated effect size: adjusted odds ratio = 4.57, 95% CIs 1.23 to 16.94)."""
+While not yet released to the public, there has been a pilot study that shows an 11.5\% biochemically verified quit rate after 6 months \cite{naughtonSmokingCessationSmartphone2024}. This number does include the people who dropped out.
+
+This app is a \ac{jitai} \cite{naughtonSmokingCessationSmartphone2024}; it tracks the users location and learns about the environment and location where the user smokes. When a user is in such an environment, the app sends in-the-moment advise to help them resist smoking.
+
+Upon first opening the app, the user needs to set their quit date. Then, they need to submit their smoking habits and key environmental factors in real-time, via a behaviour logging tool.
+After the quit date, the app uses location and the previously self-identified high-risk locations to tailor the timing and contents of the support messages \cite{naughtonSmokingCessationSmartphone2024}.
+
+The app was found to be more effective than the control group that used the SmokeFree service \cite{naughtonSmokingCessationSmartphone2024} provided by the National Health Service (UK) (11.5\% vs 2.9\%).
+
+The study did not find why the app worked \cite{naughtonSmokingCessationSmartphone2024}, or what specific interventions helped most. Many users cited learning about their triggers and habits as being very valuable.
+The main reasons for dropping the app \cite{naughtonSmokingCessationSmartphone2024} were relapse, feeling like they no longer needed support, finding that the app did not match their needs, and technical issues.
+
+\subsubsection{Discussion}
+
+Both of these apps had studies showed their effectiveness in smoking cessation. However, these apps have one "expected path" to follow, and users drop the app if it doesn't fit their needs.
+The studies did not find why their app worked, or what specific interventions helped most.
 
 
 
@@ -59,7 +80,7 @@ These models all serve a slightly different purpose and operate on different tim
 The \ac{comb} model [citation needed] describes the relationship between capability, opportunity, and motivation in influencing behavior. This means you can influence behavior by tweaking the other factors.
 The model can thus describe what factors you need to change.
 
-\ac{hapa} \cite{schwarzerModelingHealthBehavior2008,schwarzerHealthActionProcess2016} makes a distinction between a preintentional phase and a volitional phase. In the first phase, a person develops their motivation and plan of action. Once this is "good intention" is sufficiently developed, the desired health action can be initiated.
+\ac{hapa} \cite{schwarzerModelingHealthBehavior2008,schwarzerHealthActionProcess2016} makes a distinction between a preintentional phase and a volitional phase. In the first phase, a person develops their motivation and plan of action. Once this "good intention" is sufficiently developed, the desired health action can be initiated.
 Now, in the volitional phase, this action needs to be maintained, which needs self-regulatory skills and strategies \cite{schwarzerModelingHealthBehavior2008}.
 
 Compared to \ac{comb}, \ac{hapa} focuses more on the psychological processes that drive behavior change, particularly the transition from intention to action and the maintenance of that action, rather than the physical or environmental factors.
@@ -73,8 +94,8 @@ We want to use a hybrid approach, combining models to find the best intervention
 
 % \textbf{Related topics: how to use chatbot integration correctly? How to steer our interventions according to user feedback (either direct or indirect feedback)?}
 
-In addition to the models discussed, we also need to consider the integration of chatbot technology and the use of user feedback to improve our interventions.
+In addition to the models discussed, we also need to consider the integration of a chatbot and the use of user feedback to improve our interventions.
 
-To successfully achieve this, we need to perform more research into the effectiveness of chatbots, when to use them, and when not to.
+To successfully achieve this, we need to perform more research into the effectiveness of chatbots; when to use them, and when not to.
 
-Additionally, we want to look into how we can effectively learn to steer our interventions, when the user provides feedback. We want to explore at least two paths: how to learn from indirect feedback, like swiping away or ignoring a notification, and how to learn from direct feedback, like a yes-or-no question we ask of the user.
+Additionally, we want to look into how we can effectively learn to steer our interventions when the user provides feedback. We want to explore at least two paths: how to learn from indirect feedback, like swiping away or ignoring a notification, and how to learn from direct feedback, like a yes-or-no question we ask of the user.
