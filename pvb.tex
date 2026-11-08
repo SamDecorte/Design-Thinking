@@ -24,7 +24,12 @@ The behaviour models are not decoration. They are the logic the app runs on. The
     \item User info (onboarding, check-ins, sensors) is translated into \textbf{determinants} via TDF and COM-B, within the current \textbf{HAPA} phase.
     \item The determinants select the \textbf{BCTs} that target them.
     \item Each BCT can be delivered through several concrete \textbf{app features}. The app picks the feature that best fits this user.
-    \item A \textbf{performance evaluation} checks whether the feature helped: did the user interact, did the craving pass, did they smoke? The result feeds back into the selection, which is how the app gets more \textbf{personal} over time.
+    \item A \textbf{performance evaluation} checks whether the feature helped: did the user interact, did the craving pass, did they smoke? The result feeds back into:
+    \begin{itemize}
+        \item Feature selection for the user, which is how the app gets more \textbf{personal} over time.
+        \item The belief about feature effectiveness for the current context (user info, HAPA phase and determinants), to improve feature selection for other users.
+    \end{itemize}
+      
 \end{enumerate}
 
 Table~\ref{tab:bct-mapping} shows this for one determinant. When the app detects that social influences matter for a user (for example, the user says in onboarding that friends or a partner support their attempt), it selects BCT 3.1 \textit{Social support (unspecified)} from the BCT Taxonomy v1 (Michie et al., 2013). This BCT can be delivered through two different features. Which one the user gets depends on their profile, and the performance evaluation corrects the choice if it does not work.
@@ -80,12 +85,12 @@ These needs come directly from the interviews (Empathize) and from the clusterin
         \item \textbf{Cause (COM-B):} stress gets urge-surfing audio, a trigger place gets a problem-solving chatbot, low motivation gets the user's personal ``why''.
     \end{itemize}
     \item \textbf{Several features per BCT.} The same technique can be delivered in different ways (Table~\ref{tab:bct-mapping}), so the app can match the form to the person.
-    \item \textbf{Progress tracking.} Using Ecological Momentary Assessments (EMAs) (periodical short list of questions) performed by the chatbot, we can evaluate if the determinants we aimed at actually changed, to track the progression and state of the user for future feature selection. These assessments can be extended with other questions, to update other relevant user knowledge, and offload the size of the initial questionnaire.
+    \item \textbf{Progress tracking.} Using Ecological Momentary Assessments (EMAs) (periodical short list of questions) performed by the chatbot, we can evaluate if the determinants we aimed at actually changed, to track the progression and state of the user for future feature selection. These assessments can be extended with other questions, to update other relevant knowledge about the user, and offload the size of the initial questionnaire.
     \item \textbf{Performance evaluation.} By combining the knowledge about the progress of the user, and the used features between the assessments, we can get a valuable indication about the effectiveness of each feature.
     \item \textbf{Learning per user.}
     \begin{itemize}
         \item \textbf{To select the features.} Through the performance evaluation, the app learns which features work for this user and which ones they ignore. Which lets us update the knowledge about the user.
-        \item \textbf{To adapt the features.} Some features, such as sending a notification to distract the user, contain their own modularity and testability: We can track if the user actually clicked on the notification. Based on this, we can adapt our knowledge about the user (eg. what they find interesting). And we can change which notification we send. We can then transfer this knowledge to other features that might exploit the users interests.
+        \item \textbf{To adapt the features.} Some features, such as sending a notification to distract the user, contain their own modularity and testability: We can track if the user actually clicked on the notification. Based on this, we can adapt our knowledge about the user (eg. what they find interesting). And we can change which notification we send. We can then transfer this knowledge to other features that might exploit the user's interests.
     \end{itemize}
     \item \textbf{Learning over all users.} Using the performance evaluation, we can update our belief about the effectiveness of each feature in a certain context (determinants + knowledge about user). This can be used to improve feature selection when we have multiple features that aim for the same determinants.
 \end{itemize}
