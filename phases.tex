@@ -102,7 +102,7 @@ The actual succes of the plan can only be seen at the end of this process.
 
 In the psychological literature, there is already extensive research being done on how such behaviours, like a smoking addiction could be changed (section \ref{sec:SOTA}).
 Different models and theories are developed, for possible guidance programs. 
-Such guidance models, form the basis of the working flow of professionals, such as tabacologists in our case.
+Such guidance models, form the basis of the working flow of professionals, tabacologists in our case.
 A tabacologist will talk to the patient, ask questions, identify why they struggle in changing their behaviour.
 They will help in motivating the patient, build a plan, and help them stick to this plan.
 
@@ -110,16 +110,45 @@ To make our app work, we can try to learn from how it is already being done in p
 and try to fit the reasoning being done by a tabacologist, into our app. 
 We can then try to further improve the performance by utilising the information we can gather when a larger user base is using our app.
 
-What we thus need, is to build an idea of how we might have our app follow existing behaviour change models. 
-We can then present this reasoning to experts, like tabacologists and researchers, to test the validity of our reasoning.
-Once this theoretical basis is solid, we can work out the learning model for further performance improvement.
+Without going too deep on the psychological background, we will explain our reasoning behind the combination of different models.
+\begin{itemize}
+    \item The HAPA model (Health Action Process Approach) identifies and classifies the person in different phases:
+    \begin{itemize}
+        \item The motivational phase, where the individual forms the intention to change. Which is driven by factors such as risk perception (recognizing the health threat) and outcome expectanties (believing the change will be beneficial).
+        \item The volitional phase, where the individual takes action to stop. This requires factors such as action planning (planning when, where, how to act), coping planning (anticipating barriers and creating fallback strategies).
+    \end{itemize}
+    \item the COM-B model, which posits that for behaviour change to occur, three interacting conditions must be met: Capability, Opportunity and Motivation. These conditions can be mapped to the different phases in the HAPA model: for example Motivation (COM-B) -> Motivational phase (HAPA)
+    \item The Theoretical Domains Framework (TDF) acts as a magnifying glass for the COM-B model. COM-B tells us what needs to change, for example the Capability. The TDF then identifies the barriers or facilitators why people do or do not change their behaviour. For example, in the case of Capability this is:
+    \begin{itemize}
+        \item Knowledge
+        \item Skills
+        \item Memory, attention and decision process
+        \item Behavioural regulation
+    \end{itemize}
+\end{itemize}
 
-Without going too deep on the psychological background, we will explain our reasoning behing the combination of different models.
-The HAPA model (Health Action Process Approach) identifies and classifies the person in different phases: 
+When combining those three models, we can ask the user a series of questions to define: In which phase of the stopping process they are. 
+And which barriers or facilitators (which we will call determinants) we need to target, in order to help them move forward and succesfully go through the phases.
 
-What our theoretical prototype actually looks like:
+Once we know which determinants need to change. We need to determine how we can do this using our app features.
+
+In the psychological theory, a determinant can be changed through a Behaviour Change Technique (BCT). 
+For example, a possible determinant can be low self-efficacy (a user doubts wether they can handle severe cravings).
+We can try to change this using the BCT action planning. 
+Implementing this in a feature could be having a tool to help users build their own "if-then" coping plan.
+
 \begin{enumerate}
-    \item We use the HAPA model combined with the COM-B model and TDF 
+    \item To classify the possible BCTs, we can use the widely used BCT Taxonomy v1. 
+    \item To determine which BCT alters which determinant(s), we can use the existing Theory and Techniques Tool, which provides the links showing which BCT changes which determinants.
+    \item We then need to identify for the possible features and interventions, which BCTs they contain. Using existing literature possibly assisted by experts in the field.
 \end{enumerate}
 
+Using this, we can at each point select the feature that contains the BCTs aiming at the determinants that need to be changed in each phase.
 
+\subsection{Testing the third prototype}
+This is a prototype for the theoretical basis that we need to validate and improve, in order to have a logical base for our app.
+We interviewed a tabacologist from The Flemish Institute for Healthy Life (VIG) for feedback on this current prototype, and learned that we were on a good path,
+seeing clear parallels between our approach and the methods they developped at VIG.
+For a more detailed review,
+we will consult other experts in the field, like Geert Combrez, the challenger for this project who already provided
+a strong basis for the ideas behind the current BCT-determinant approach.
