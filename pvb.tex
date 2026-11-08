@@ -73,14 +73,21 @@ These needs come directly from the interviews (Empathize) and from the clusterin
 \label{subsec:product}
 
 \begin{itemize}
-    \item \textbf{Personal onboarding.} The user maps their own triggers and preferred kinds of help. Based on user feedback from the Test phase, this happens through a short chatbot conversation instead of a questionnaire.
+    \item \textbf{Personal onboarding.} The app maps relevant information about the user. Such as preferred kind of help, phase in the HAPA model and goal determinants. This happens through a chatbot conversation, which will be kept as short as possible.
     \item \textbf{Smart selection from a BCT library.} The app picks the techniques, not the user. Selection works on two levels:
     \begin{itemize}
         \item \textbf{Phase (HAPA):} before the quit day, only motivation modules (health risks, money wasted, confidence). After the quit day, only coping modules (coping plans, trigger management, streaks).
         \item \textbf{Cause (COM-B):} stress gets urge-surfing audio, a trigger place gets a problem-solving chatbot, low motivation gets the user's personal ``why''.
     \end{itemize}
     \item \textbf{Several features per BCT.} The same technique can be delivered in different ways (Table~\ref{tab:bct-mapping}), so the app can match the form to the person.
-    \item \textbf{Learning per user.} Through the performance evaluation, the app learns which features work for this user and which ones they ignore.
+    \item \textbf{Progress tracking.} Using Ecological Momentary Assessments (EMAs) (periodical short list of questions) performed by the chatbot, we can evaluate if the determinants we aimed at actually changed, to track the progression and state of the user for future feature selection. These assessments can be extended with other questions, to update other relevant user knowledge, and offload the size of the initial questionnaire.
+    \item \textbf{Performance evaluation.} By combining the knowledge about the progress of the user, and the used features between the assessments, we can get a valuable indication about the effectiveness of each feature.
+    \item \textbf{Learning per user.}
+    \begin{itemize}
+        \item \textbf{To select the features.} Through the performance evaluation, the app learns which features work for this user and which ones they ignore. Which lets us update the knowledge about the user.
+        \item \textbf{To adapt the features.} Some features, such as sending a notification to distract the user, contain their own modularity and testability: We can track if the user actually clicked on the notification. Based on this, we can adapt our knowledge about the user (eg. what they find interesting). And we can change which notification we send. We can then transfer this knowledge to other features that might exploit the users interests.
+    \end{itemize}
+    \item \textbf{Learning over all users.} Using the performance evaluation, we can update our belief about the effectiveness of each feature in a certain context (determinants + knowledge about user). This can be used to improve feature selection when we have multiple features that aim for the same determinants.
 \end{itemize}
 
 \subsection{Value}
