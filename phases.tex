@@ -4,26 +4,25 @@
 % Empathize, Define and Ideate (written by Senne)
 \input{emp-def-idea.tex}
 
-\subsection{Prototype}
+\subsection{First and second prototype}
 
 To bring our idea into a testable form, we created a prototype consisting of two different parts: a storyboard that
-would give an outline of how a possible user might interact with the app, and a user interface, to be able to present to possible end users what the actual concept might look like.
-We need both parts, to be able to clearly explain to a possible end user what the app might look like an how it would work, in order to collect feedback.
+would give an outline of how a possible user might interact with the app, and a user interface, to be able to present what the actual concept might look like for an end user.
 
 \subsubsection{Storyboard}
 Below is a step by step explanation of the flow of interaction with the app.
 
 \begin{enumerate}
-    \item A smoker comes in contact with the app
+    \item A smoker comes in contact with the app.
     \item After downloading the app, the user will fill in a questionnaire with imporant information, through a conversation with the chatbot.
     \item Scenario: the user is trying to stop from this day onwards (which we learned from the questionnaire).
     \item On day 1, at a certain time, using wearable and other provided data by the user, the app detects high risk of craving and sends a notification, for example, a message from the chatbot.
     \item The user might then actually interact with the notification, or ignore it.
-    \item Based on the amount of interaction with the user, and possibly some new questions asked by the chatbot, the app tries to re-assess wether the user actually smoked, and if the notification was effective.
+    \item Based on the amount of interaction with the user, and possibly some new questions asked by the chatbot, the app tries to assess wether the user actually smoked, and if the notification was effective.
     \item If the notification was not effective, the next day, or at the next high risk moment, the app will try to send a different notification, with a different message, or at a different time. This could now be a notification for a funny news story, that might temporarily distract the user from their craving.
     \item Again, after re-assessing the success. The app learns that this intervention was effective or not.
-    \item If these notifications keep failing, these craving support notifications might not be the right method for this specific user.
-    \item The app should then learn this, and try a different feature, such as: helping the user plan a less stressful day, or provide them with plans to cope with craving moments without their phone.
+    \item If these notifications keep failing, the craving support notifications might not be the right method for this specific user.
+    \item The app should then learn this, and try a different feature, such as: helping the user plan their day to be less stressfull, or provide them with plans to cope with craving moments without their phone.
 
 \end{enumerate}
 
@@ -35,20 +34,20 @@ It combines direct, smoking cessation support, with indirect support, such as st
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{prototype_yusuf_1.png}
-    \caption{\label{fig:proto1}This is an example image.}
+    \caption{\label{fig:proto1}The visual prototype, with different example users (top), possible input data (bottom left), intervention and feature selection model (bottom center), visualisation of the user phone (bottom right).}
 \end{figure}
 
 The visual interface was built using Figma, and later translated to an interactive web-app using AI-assisted coding.
 Figure \ref{fig:proto1} shows a large view of the prototype. At the top, we have an option to select different possible users with their own preferences and needs.
 Below this, on the left side, we have sliders to change the instantaneous input data, such as stress, steps today, daily routine, location.
-In the middle, we see a visual representation of what the model should be doing under the hood: translate this input data in intervention selection, such as media distraction, chatting with a chatbot. 
+In the middle, we see a visual representation of what the model should be doing under the hood: translate this input data to intervention selection, such as media distraction, chatting with a chatbot. 
 This is better seen in the enlarged view of the last 2 steps in figure \ref{fig:proto2}.
 Finally, on the right, we have what the user would actually see on their phone: a personalized notification (figure \ref{fig:proto1}), leading them to one of the app features, or a different app, such as spotify to relax using music (figure \ref{fig:proto2}).
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{prototype_noor_4.png}
-    \caption{\label{fig:proto2}This is an example image.}
+    \caption{\label{fig:proto2}Enlarged view of feature selection model, and a possible feature on the user's phone, playing a song on spotify}
 \end{figure}
 
 
@@ -59,10 +58,9 @@ We interviewed some (ex-)smokers from our own environment, as well as non-smoker
 As a non-smoker could also give interesting insights into possible problems with the app interface and flow.
 
 We proposed our prototype by pitching our idea, explaining the flow through the storyboard, while showing the user interface.
-Through this, we received a range of interesting and usefull points of feedback.
 
 \subsubsection{Received feedback}
-On the positive side:
+The interviewees responded positive about the following topics:
 \begin{enumerate}
     \item Smokers believed in the effectivity of Just In Time Interventions, sending notifications to help them cope with cravings, direct or indirectly related to smoking.
     \item Using a chatbot is received as more pleasant than having to fill in a long questionnaire.
@@ -70,7 +68,7 @@ On the positive side:
     \item Some users like the idea of an app that learns about them and their smoking triggers, allowing them to review this data and learn more about themselves.
 \end{enumerate}
 
-On the negative side, possible problems with our app:
+Meanwhile, they also identified possible problems with our app:
 \begin{enumerate}
     \item Long questionnaires and chats with chatbots are not well received and should be avoided.
     \item Daily notifications, and multiple notifications throughout the day can be annoying.
@@ -88,7 +86,40 @@ The user personalization is based on dynamically choosing among these features, 
 Therefore, due to the changing nature of our design, 
 we will have to re-iterate the gathering of user feedback frequently to test how they perceive new features and implementations.
 
-But what we also learned, from designing this prototype, is that 
+We can conclude that, our idea of having an app that learns about the user, 
+and dynamically changes itself to help them in the quitting process in the best way possible, 
+is well received and liked by the possible users.
+It could be a usefull and new concept, if it actually works.
+
+This last point, raised the question "how do we make such an app actually work?", which brought us back to the drawing board.
+How will we connect a range of features in an intelligent way, to actually help the user to quit smoking?
+
+We cannot just train a large model, to learn which feature will help the user quit smoking.
+Changing a behaviour is a complex process, requiring step by step changes, each with a reasoning behind them.
+The actual succes of the plan can only be seen at the end of this process.
+
+\subsection{Third prototype}
+
+In the psychological literature, there is already extensive research being done on how such behaviours, like a smoking addiction could be changed (section \ref{sec:SOTA}).
+Different models and theories are developed, for possible guidance programs. 
+Such guidance models, form the basis of the working flow of professionals, such as tabacologists in our case.
+A tabacologist will talk to the patient, ask questions, identify why they struggle in changing their behaviour.
+They will help in motivating the patient, build a plan, and help them stick to this plan.
+
+To make our app work, we can try to learn from how it is already being done in practice, 
+and try to fit the reasoning being done by a tabacologist, into our app. 
+We can then try to further improve the performance by utilising the information we can gather when a larger user base is using our app.
+
+What we thus need, is to build an idea of how we might have our app follow existing behaviour change models. 
+We can then present this reasoning to experts, like tabacologists and researchers, to test the validity of our reasoning.
+Once this theoretical basis is solid, we can work out the learning model for further performance improvement.
+
+Without going too deep on the psychological background, we will explain our reasoning behing the combination of different models.
+The HAPA model (Health Action Process Approach) identifies and classifies the person in different phases: 
+
+What our theoretical prototype actually looks like:
+\begin{enumerate}
+    \item We use the HAPA model combined with the COM-B model and TDF 
+\end{enumerate}
 
 
-When presenting users with the updated idea. They like the idea of using a model (like HAPA, see further), to guide them through the different phases of the process: pre-intender, quitting, maintenance, ...
